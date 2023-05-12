@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 10:48:34 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/04 20:55:41 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/12 19:43:17 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,106 @@ int main (int ac, char **av)
         // while (maps.maphya[i])
         //     printf ("%s\n",maps.maphya[i++]);
         /*-------------------------------------------------------------------------------------------------------*/
+        /*###############################################################MLX PART######################################################################*/
+        // void *mlx;
+        // int a = 64;
+        // int b = 64;
+        // mlx = mlx_init();
+        // void *mlx_win = mlx_new_window(mlx, 1919, 1404, "lo3ba");
+        // void *img_god = mlx_xpm_file_to_image(mlx, "./xpmfiles/god_of_war.xpm", &a, &b);
+        // int row=0;
+        // int clm=0;
+        // t_struct_of_excu    *excu;
+        maps->ptr_of_call = ft_calloc (1,sizeof (t_struct_of_excu));
+        maps->ptr_of_call->a = 64;
+        maps->ptr_of_call->b = 64;
+        maps->ptr_of_call->row = 0;
+        maps->ptr_of_call->mlx = mlx_init();
+        maps->ptr_of_call->mlx_win = mlx_new_window(maps->ptr_of_call->mlx ,1919, 1404, "lo3ba");
+        // maps->ptr_of_call->img_ply = mlx_xpm_file_to_image(maps->ptr_of_call->mlx, "./xpmfiles/god_of_war.xpm", &maps->ptr_of_call->a, &maps->ptr_of_call->b);
+        mlx_hook (maps->ptr_of_call->mlx_win, 17, 0, &close_red_button, maps->ptr_of_call);
+        // printf ("$$$$$$%d",j); 
+        // while (maps->cp_maphya[maps->ptr_of_call->row])
+        // {
+        //     maps->ptr_of_call->clm = 0;
+        //     while (maps->cp_maphya[maps->ptr_of_call->row][maps->ptr_of_call->clm])
+        //     {
+        //         if (maps->cp_maphya[maps->ptr_of_call->row][maps->ptr_of_call->clm] == '1')
+        //         {
+        //             maps->ptr_of_call->img_ply = mlx_xpm_file_to_image(maps->ptr_of_call->mlx, "./xpmfiles/god_of_war.xpm", &maps->ptr_of_call->a, &maps->ptr_of_call->b);
+        //             mlx_put_image_to_window (maps->ptr_of_call->mlx , maps->ptr_of_call->mlx_win ,maps->ptr_of_call->img_ply,(maps->ptr_of_call->clm * maps->ptr_of_call->a),(maps->ptr_of_call->row * maps->ptr_of_call->a));
+        //         }
+        //         if (maps->cp_maphya[maps->ptr_of_call->row][maps->ptr_of_call->clm] == 'C')
+        //         {
+        //             maps->ptr_of_call->img_ply = mlx_xpm_file_to_image (maps->ptr_of_call->mlx, "./xpmfiles/AnyConv.com__mamaresized.xpm", &maps->ptr_of_call->a ,&maps->ptr_of_call->b);
+        //             mlx_put_image_to_window (maps->ptr_of_call->mlx , maps->ptr_of_call->mlx_win ,maps->ptr_of_call->img_ply,(maps->ptr_of_call->clm * maps->ptr_of_call->a),(maps->ptr_of_call->row * maps->ptr_of_call->a));
+        //         }
+        //         if (maps->cp_maphya[maps->ptr_of_call->row][maps->ptr_of_call->clm] == 'E')
+        //         {
+        //             maps->ptr_of_call->img_ply = mlx_xpm_file_to_image (maps->ptr_of_call->mlx, "./xpmfiles/AnyConv.com__lock.xpm", &maps->ptr_of_call->a ,&maps->ptr_of_call->b);
+        //             mlx_put_image_to_window (maps->ptr_of_call->mlx , maps->ptr_of_call->mlx_win ,maps->ptr_of_call->img_ply,(maps->ptr_of_call->clm * maps->ptr_of_call->a),(maps->ptr_of_call->row * maps->ptr_of_call->a));
+        //         }
+        //         if (maps->cp_maphya[maps->ptr_of_call->row][maps->ptr_of_call->clm] == 'P')
+        //         {
+        //             maps->ptr_of_call->img_ply = mlx_xpm_file_to_image (maps->ptr_of_call->mlx, "./xpmfiles/__char00012 (1).xpm", &maps->ptr_of_call->a ,&maps->ptr_of_call->b);
+        //             mlx_put_image_to_window (maps->ptr_of_call->mlx , maps->ptr_of_call->mlx_win ,maps->ptr_of_call->img_ply,(maps->ptr_of_call->clm * maps->ptr_of_call->a),(maps->ptr_of_call->row * maps->ptr_of_call->a));
+        //         }
+                
+        //         maps->ptr_of_call->clm++;
+        //     }
+        //     mlx_hook (maps->ptr_of_call->mlx_win, 2, 0, ft_move, maps);
+        //     maps->ptr_of_call->row++;
+        // }
+        ft_draw(maps);
+        mlx_hook (maps->ptr_of_call->mlx_win, 2, 0, ft_move, maps);
+        // maps->ptr_of_call->row =0;
+        // maps->ptr_of_call->clm =0;
+        // while (maps->cp_maphya[maps->ptr_of_call->row])
+        // {
+        //     maps->ptr_of_call->clm = 0;
+        //     while (maps->cp_maphya[maps->ptr_of_call->row][maps->ptr_of_call->clm])
+        //     {
+        //         if (maps->cp_maphya[maps->ptr_of_call->row][maps->ptr_of_call->clm] == '1')
+        //         {
+        //             maps->ptr_of_call->img_ply = mlx_xpm_file_to_image(maps->ptr_of_call->mlx, "./xpmfiles/god_of_war.xpm", &maps->ptr_of_call->a, &maps->ptr_of_call->b);
+        //             mlx_put_image_to_window (maps->ptr_of_call->mlx , maps->ptr_of_call->mlx_win ,maps->ptr_of_call->img_ply,(maps->ptr_of_call->clm * maps->ptr_of_call->a),(maps->ptr_of_call->row * maps->ptr_of_call->a));
+        //             printf ("00000\n");
+        //         }
+        //         if (maps->cp_maphya[maps->ptr_of_call->row][maps->ptr_of_call->clm] == 'C')
+        //         {
+        //             maps->ptr_of_call->img_ply = mlx_xpm_file_to_image (maps->ptr_of_call->mlx, "./xpmfiles/AnyConv.com__mamaresized.xpm", &maps->ptr_of_call->a ,&maps->ptr_of_call->b);
+        //             mlx_put_image_to_window (maps->ptr_of_call->mlx , maps->ptr_of_call->mlx_win ,maps->ptr_of_call->img_ply,(maps->ptr_of_call->clm * maps->ptr_of_call->a),(maps->ptr_of_call->row * maps->ptr_of_call->a));
+        //             printf ("11111\n");
+        //         }
+        //         if (maps->cp_maphya[maps->ptr_of_call->row][maps->ptr_of_call->clm] == 'E')
+        //         {
+        //             maps->ptr_of_call->img_ply = mlx_xpm_file_to_image (maps->ptr_of_call->mlx, "./xpmfiles/AnyConv.com__lock.xpm", &maps->ptr_of_call->a ,&maps->ptr_of_call->b);
+        //             mlx_put_image_to_window (maps->ptr_of_call->mlx , maps->ptr_of_call->mlx_win ,maps->ptr_of_call->img_ply,(maps->ptr_of_call->clm * maps->ptr_of_call->a),(maps->ptr_of_call->row * maps->ptr_of_call->a));
+        //             printf ("22222\n");
+        //         }
+        //         if (maps->cp_maphya[maps->ptr_of_call->row][maps->ptr_of_call->clm] == 'P')
+        //         {
+        //             maps->ptr_of_call->img_ply = mlx_xpm_file_to_image (maps->ptr_of_call->mlx, "./xpmfiles/__char00012 (1).xpm", &maps->ptr_of_call->a ,&maps->ptr_of_call->b);
+        //             mlx_put_image_to_window (maps->ptr_of_call->mlx , maps->ptr_of_call->mlx_win ,maps->ptr_of_call->img_ply,(maps->ptr_of_call->clm * maps->ptr_of_call->a),(maps->ptr_of_call->row * maps->ptr_of_call->a));
+        //             printf ("33333\n");
+        //         }
+        //         maps->ptr_of_call->clm++;
+        //     }
+        //     mlx_hook (maps->ptr_of_call->mlx_win, 2, 0, ft_move, maps);
+        //     maps->ptr_of_call->row++;
+        // }
+        // ft_draw(maps);
+        // mlx_put_image_to_window(mlx, mlx_win, img_god, 0, 0);
+        // mlx_put_image_to_window(mlx, mlx_win, img_god, 64, 0);
+        // mlx_put_image_to_window(mlx, mlx_win, img_god, 128, 0);
+        // mlx_put_image_to_window(mlx, mlx_win, img_god, 192, 0);
+        // mlx_put_image_to_window(mlx, mlx_win, img_god, 256, 0);
+        // mlx_put_image_to_window(mlx, mlx_win, img_god, 320, 0);
+        // mlx_put_image_to_window(mlx, mlx_win, img_god, 384, 0);
+
+
+        /*############################################################################################################################################*/
+        mlx_loop(maps->ptr_of_call->mlx);
     }
     else
     {

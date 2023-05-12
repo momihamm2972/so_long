@@ -1,3 +1,4 @@
 .gitignor
 so_long.dSYM
 main.c
+.DS_Store

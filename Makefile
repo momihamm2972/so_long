@@ -6,7 +6,7 @@
 #    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/29 09:54:22 by momihamm          #+#    #+#              #
-#    Updated: 2023/05/02 19:44:55 by momihamm         ###   ########.fr        #
+#    Updated: 2023/05/12 15:57:39 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,19 @@ FILES = so_long.c\
 		get_next_line.c\
 		map_checker.c\
 		map_checker1.c\
-		map_checker2.c
+		map_checker2.c\
+		excution0.c\
+		excution1.c
 
 OBJ = $(FILES:.c=.o)
 
 all : $(NAME)               
 
 %.o : %.c so_long.h
-	$(CC) $(FLAGS) -c $<
+	$(CC) $(FLAGS) -Imlx -c $<
 
 $(NAME) : $(OBJ)
-	$(CC) $(FLAGS) $(FILES) -o $(NAME)
+	$(CC) $(FLAGS) $(FILES) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean :
 		@rm -f $(OBJ)
