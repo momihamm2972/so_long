@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 21:14:56 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/12 13:41:43 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/14 14:15:09 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,29 +38,54 @@
 //   }
 // }
 
-int ornob_of_the_plyer(char **map)
+int count_of_coll(char **arr)
 {
-    int indx;
     int row;
+    int ind;
+    int cnt;
 
     row = 0;
-    while (map[row])
+    cnt = 0;
+    while (arr[row])
     {
-        indx = 0;
-        while (map[row][indx])
+        ind = 0;
+        while (arr[row][ind])
         {
-            if (map[row][indx] == 'P')
-                return (indx);
-            indx++;
+            if (arr[row][ind] == 'C')
+                cnt++;
+            ind++;
         }
         row++;
     }
-    return (0);
+    return (cnt);
 }
+
+// int ornob_of_the_plyer(char **map)
+// {
+//     int indx;
+//     int row;
+
+//     row = 0;
+//     while (map[row])
+//     {
+//         indx = 0;
+//         while (map[row][indx])
+//         {
+//             if (map[row][indx] == 'P')
+//                 return (indx);
+//             indx++;
+//         }
+//         row++;
+//     }
+//     return (0);
+// }
 
 int main ()
 {
   char be_map[]= "1111111111\n100P00C001\n100000C001\n100000C001\n100000C001\n1000000001\n100C000001\n1C00000001\n10000000C1\n1000000E01\n1111111111";
   char **map = ft_split (be_map, '\n');
-  printf ("%d",ornob_of_the_plyer(map));
+  int i=0;
+  while (map[i])
+    printf ("%s\n",map[i++]);
+  printf ("%d",count_of_coll(map));
 }

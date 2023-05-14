@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 19:30:21 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/03 19:17:57 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:32:17 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,17 +47,20 @@ void    check_P_E_C(char **str)
 {
      if (counts_0(str, 'P') != 1)
         {
-            printf ("$$$%d\n",counts_0(str, 'P'));
+            // printf ("$$$%d\n",counts_0(str, 'P'));
+            print_msg();
             exit (0);
         }
         if (counts_0(str, 'E') != 1)
         {
-            printf ("***%d\n",counts_0(str, 'E'));
+            // printf ("***%d\n",counts_0(str, 'E'));
+            print_msg();
             exit (0);
         }
         if (counts_0(str, 'C') < 1)
         {
-            printf ("&&&%d\n",counts_0(str, 'C'));
+            // printf ("&&&%d\n",counts_0(str, 'C'));
+            print_msg();
             exit (0);
         }
 }
@@ -85,3 +88,31 @@ void    check_P_E_C(char **str)
 //         flood_fill (str, afassil, arratib - 1, new_char);
 //     }
 // }
+
+int count_of_coll(char **arr)
+{
+    int row;
+    int ind;
+    int cnt;
+
+    row = 0;
+    cnt = 0;
+    printf ("%s\n",arr[21]);
+    printf ("%s\n",arr[22]);
+    while (arr[row])
+    {
+        printf ("%d\n",row);
+        ind = 0;
+        while (arr[row][ind])
+        {
+            // printf ("ana#%d\n",ind);
+            if (arr[row][ind] == 'C')
+                cnt++;
+            ind++;
+        }
+        row++;
+        if (arr[row + 1] == NULL)
+            break;
+    }
+    return (cnt);
+}

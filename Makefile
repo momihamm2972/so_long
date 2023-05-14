@@ -6,13 +6,13 @@
 #    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/29 09:54:22 by momihamm          #+#    #+#              #
-#    Updated: 2023/05/12 15:57:39 by momihamm         ###   ########.fr        #
+#    Updated: 2023/05/14 14:26:12 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 CC = cc
-FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra -g 
 FILES = so_long.c\
 		utils.c\
 		get_next_line_utils.c\
@@ -36,7 +36,7 @@ $(NAME) : $(OBJ)
 clean :
 		@rm -f $(OBJ)
 
-fclean :
+fclean : clean
 		@rm -f $(NAME)
 
 re : fclean all

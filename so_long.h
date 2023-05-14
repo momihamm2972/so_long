@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 13:56:23 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/12 21:37:02 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/13 23:28:24 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,13 @@ typedef struct excu
     int b;
     void *mlx_win;
     void *img_ply;
+    void *img_wall;
+    void *img_coll;
+    void *img_exit;
+    void *img_exit_open;
     int row;
     int clm;
+    int count_of_coll;
 }   t_struct_of_excu;
 /*#################################################################################################################*/
 /*---------------------------------------------------------structs----------------------------------------------------------*/
@@ -86,6 +91,7 @@ void swap_dwn(int row, int indx, char **map);
 void swap_lf(int row, int indx, char **map);
 void swap_rh(int row, int indx, char **map);
 void    ft_draw(t_struct_of_maps *structt);
+int count_of_coll(char **arr);
 // void    ft_colorbynew(char old_color, char new_color);
 // void    flood_fill(char **str, int afassil, int arratib, char new_char, char old_char);
 
