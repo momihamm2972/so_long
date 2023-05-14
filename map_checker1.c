@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 19:30:12 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/02 19:31:30 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/14 23:06:18 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ char    *ft_of_reding_the_map(int fd)
     char *str;
     char *all;
 
-    //indx = 0;
     all = ft_strdup ("");
-    str = (char *) ft_calloc (BUFFER_SIZE + 1, sizeof (char));
     while (1)
     {
         str = get_next_line (fd);

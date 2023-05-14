@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:57:13 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/14 21:48:50 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/14 22:02:41 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void    ft_draw(t_struct_of_maps *maps)
     maps->ptr_of_call->img_ply = mlx_xpm_file_to_image (maps->ptr_of_call->mlx, "./xpmfiles/__char00012 (1).xpm", &maps->ptr_of_call->a ,&maps->ptr_of_call->b);
     if (maps->ptr_of_call->count_of_coll == maps->ptr_of_call->coll_of_exit)
     {
-        printf ("bda\n");
         ft_draw_exit(maps);
-        printf  ("sala\n");
         return;
     }
 while (maps->cp_maphya[++maps->ptr_of_call->row])

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:54:16 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/14 21:55:11 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/14 22:27:15 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,16 @@ void swap(int row, int indx, char **map, t_struct_of_maps *structt)
     {
         map[row - 1][indx] = 'P';
         map[row][indx] = '0';
+        structt->ptr_of_call->moves++;
+        printf ("Moves : %d\n",structt->ptr_of_call->moves);
     }
     if (map[row -1][indx] == 'C')
     {
         map[row - 1][indx] = 'P';
         map[row][indx] = '0';
         structt->ptr_of_call->coll_of_exit++;
-        printf ("UP>>%d\n",structt->ptr_of_call->coll_of_exit);
+        structt->ptr_of_call->moves++;
+        printf ("Moves : %d\n",structt->ptr_of_call->moves);
     }
     if (structt->ptr_of_call->count_of_coll == structt->ptr_of_call->coll_of_exit && map[row - 1][indx] == 'E')
     {
@@ -47,10 +50,18 @@ void swap_dwn(int row, int indx, char **map, t_struct_of_maps *structt)
         if (map[row + 1][indx] == 'C')
         {
             structt->ptr_of_call->coll_of_exit++;
-            printf ("UP>>%d\n",structt->ptr_of_call->coll_of_exit);
         }
         map[row + 1][indx] = 'P';
         map[row][indx] = '0';
+        structt->ptr_of_call->moves++;
+        printf ("Moves : %d\n",structt->ptr_of_call->moves);
+    }
+    if (structt->ptr_of_call->count_of_coll == structt->ptr_of_call->coll_of_exit && map[row + 1][indx] == 'E')
+    {
+        map[row + 1][indx] = 'P';
+        map[row][indx] ='0';
+        printf ("you did it !!");
+        exit(0);
     }
 }
 
@@ -61,10 +72,20 @@ void swap_rh(int row, int indx, char **map, t_struct_of_maps *structt)
         if (map[row][indx + 1] == 'C')
         {
             structt->ptr_of_call->coll_of_exit++;
-           printf ("UP>>%d\n",structt->ptr_of_call->coll_of_exit);
+            structt->ptr_of_call->moves++;
+        printf ("Moves : %d\n",structt->ptr_of_call->moves);
         }
         map[row][indx + 1] = 'P';
         map[row][indx] = '0';
+        structt->ptr_of_call->moves++;
+        printf ("Moves : %d\n",structt->ptr_of_call->moves);
+    }
+    if (structt->ptr_of_call->count_of_coll == structt->ptr_of_call->coll_of_exit && map[row][indx + 1] == 'E')
+    {
+        map[row][indx + 1] = 'P';
+        map[row][indx] ='0';
+        printf ("you did it !!");
+        exit(0);
     }
 }
 
@@ -75,10 +96,18 @@ void swap_lf(int row, int indx, char **map, t_struct_of_maps *structt)
         if (map[row][indx - 1] == 'C')
         {
             structt->ptr_of_call->coll_of_exit++;
-            printf ("UP>>%d\n",structt->ptr_of_call->coll_of_exit);
         }
         map[row][indx - 1] = 'P';
         map[row][indx] = '0';
+        structt->ptr_of_call->moves++;
+        printf ("Moves : %d\n",structt->ptr_of_call->moves);
+    }
+    if (structt->ptr_of_call->count_of_coll == structt->ptr_of_call->coll_of_exit && map[row][indx - 1] == 'E')
+    {
+        map[row][indx - 1] = 'P';
+        map[row][indx] ='0';
+        printf ("you did it !!");
+        exit(0);
     }
 }
 
