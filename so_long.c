@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 10:48:34 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/14 15:32:44 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/14 21:20:07 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,17 @@ int main (int ac, char **av)
         /*---------------------------------------------------------------------------------------------------------------------------------------*/
         /*---------------------------------------------check how many PLAYRS in the map------------------------------------------------------*/
         check_P_E_C(maps->maphya);
-        // maps->ptr_of_call->count_of_coll = count_of_coll (maps->cp_maphya);
+        check_if_the_map_has_wrong_char(maps->cp_maphya);
+        // maps->ptr_of_call->count_of_coll = 0;        
+        // printf ("%d",maps->ptr_of_call->count_of_coll);
         /*-----------------------------------------------------------------------------------------------------------------------------------*/
         /*##############################################foold fill algo##################################################################*/
         
         /*###############################################################################################################################*/
         /*------------------------------------------------print the map------------------------------------------*/
         // int i=0;
-        // while (maps.maphya[i])
-        //     printf ("%s\n",maps.maphya[i++]);
+        // while (maps->cp_maphya[i])
+        //     printf ("%s\n",maps->cp_maphya[i++]);
         /*-------------------------------------------------------------------------------------------------------*/
         /*###############################################################MLX PART######################################################################*/
     
@@ -66,6 +68,9 @@ int main (int ac, char **av)
         maps->ptr_of_call->a = 64;
         maps->ptr_of_call->b = 64;
         maps->ptr_of_call->row = 0;
+        maps->ptr_of_call->count_of_coll = count_of_coll (maps->cp_maphya);
+        maps->ptr_of_call->coll_of_exit = 0;
+        printf ("$$$$EF%d",maps->ptr_of_call->count_of_coll);
         maps->ptr_of_call->mlx = mlx_init();
         maps->ptr_of_call->mlx_win = mlx_new_window(maps->ptr_of_call->mlx ,1919, 1404, "lo3ba");
         // maps->ptr_of_call->img_ply = mlx_xpm_file_to_image(maps->ptr_of_call->mlx, "./xpmfiles/god_of_war.xpm", &maps->ptr_of_call->a, &maps->ptr_of_call->b);
@@ -73,6 +78,7 @@ int main (int ac, char **av)
         mlx_hook (maps->ptr_of_call->mlx_win, 2, 0, ft_move, maps);
         mlx_hook (maps->ptr_of_call->mlx_win, 17, 0, &close_red_button, maps->ptr_of_call);
         /*############################################################################################################################################*/
+        printf ("\n#####%d\n",maps->ptr_of_call->coll_of_exit);
         mlx_loop(maps->ptr_of_call->mlx);
     }
     else

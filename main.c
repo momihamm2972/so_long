@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 21:14:56 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/14 14:15:09 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:50:02 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,27 @@
 //   }
 // }
 
-int count_of_coll(char **arr)
-{
-    int row;
-    int ind;
-    int cnt;
+// int count_of_coll(char **arr)
+// {
+//     int row;
+//     int ind;
+//     int cnt;
 
-    row = 0;
-    cnt = 0;
-    while (arr[row])
-    {
-        ind = 0;
-        while (arr[row][ind])
-        {
-            if (arr[row][ind] == 'C')
-                cnt++;
-            ind++;
-        }
-        row++;
-    }
-    return (cnt);
-}
+//     row = 0;
+//     cnt = 0;
+//     while (arr[row])
+//     {
+//         ind = 0;
+//         while (arr[row][ind])
+//         {
+//             if (arr[row][ind] == 'C')
+//                 cnt++;
+//             ind++;
+//         }
+//         row++;
+//     }
+//     return (cnt);
+// }
 
 // int ornob_of_the_plyer(char **map)
 // {

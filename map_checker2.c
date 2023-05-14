@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 19:30:21 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/14 15:32:17 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/14 21:05:39 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,22 +97,16 @@ int count_of_coll(char **arr)
 
     row = 0;
     cnt = 0;
-    printf ("%s\n",arr[21]);
-    printf ("%s\n",arr[22]);
     while (arr[row])
     {
-        printf ("%d\n",row);
         ind = 0;
         while (arr[row][ind])
         {
-            // printf ("ana#%d\n",ind);
             if (arr[row][ind] == 'C')
                 cnt++;
             ind++;
         }
         row++;
-        if (arr[row + 1] == NULL)
-            break;
     }
     return (cnt);
 }
