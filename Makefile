@@ -6,7 +6,7 @@
 #    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/29 09:54:22 by momihamm          #+#    #+#              #
-#    Updated: 2023/05/14 14:26:12 by momihamm         ###   ########.fr        #
+#    Updated: 2023/05/15 20:16:11 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CC = cc
 FLAGS = -Wall -Werror -Wextra -g 
 FILES = so_long.c\
 		utils.c\
+		utils1.c\
 		get_next_line_utils.c\
 		get_next_line.c\
 		map_checker.c\

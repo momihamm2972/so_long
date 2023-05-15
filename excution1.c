@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:57:13 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/14 22:02:41 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:47:04 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,54 @@ while (maps->cp_maphya[++maps->ptr_of_call->row])
             }
             // maps->ptr_of_call->row++;
         }
+}
+
+void	plyer(char **map, int parm, t_struct_of_maps *structt)
+{
+	int indx;
+	int row;
+	
+	row = -1;
+	while (map[++row])
+	{
+		indx = -1;
+		while (map[row][++indx])
+		{
+			if (map[row][indx] == 'P' && parm == 0)
+				swap (row, indx, map, structt);
+			else if (map[row][indx] == 'P' && parm == 1)
+			{
+				swap_dwn(row, indx, map, structt);
+				return ;
+			}
+			else if (map[row][indx] == 'P' && parm == 2)
+			{
+				swap_rh(row, indx, map, structt);
+				return ;
+			}
+			else if (map[row][indx] == 'P' && parm == 3)
+				swap_lf (row, indx, map, structt);
+		}
+	}
+}
+
+int	ft_move(int key_hook, t_struct_of_maps *structt)
+{
+	if (key_hook == 53)
+		close_red_button();
+	else if (key_hook == 126 || key_hook == 13)
+		plyer(structt->maphya,0, structt);
+	else if (key_hook == 125 || key_hook == 1)
+		plyer(structt->maphya,1, structt);
+	else if (key_hook == 124 || key_hook == 2)
+		plyer(structt->maphya, 2, structt);
+	else if (key_hook == 123 || key_hook == 0)
+		plyer(structt->maphya,3, structt);
+	mlx_clear_window(structt->ptr_of_call->mlx, structt->ptr_of_call->mlx_win );
+	mlx_destroy_image (structt->ptr_of_call->mlx,structt->ptr_of_call->img_ply);
+	mlx_destroy_image (structt->ptr_of_call->mlx,structt->ptr_of_call->img_coll);
+	mlx_destroy_image (structt->ptr_of_call->mlx,structt->ptr_of_call->img_wall);
+	mlx_destroy_image (structt->ptr_of_call->mlx,structt->ptr_of_call->img_exit);
+	ft_draw(structt);
+	return (0);
 }

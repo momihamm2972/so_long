@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 13:56:23 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/14 22:04:58 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/15 20:19:20 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ void    ft_draw(t_struct_of_maps *structt);
 int count_of_coll(char **arr);
 void    check_if_the_map_has_wrong_char(char **map);
 void    ft_draw_exit(t_struct_of_maps *maps);
+void    ft_putchar (char c);
+void	ft_putnbr(int nb);
 // void    ft_colorbynew(char old_color, char new_color);
 // void    flood_fill(char **str, int afassil, int arratib, char new_char, char old_char);
 

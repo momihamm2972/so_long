@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 13:25:51 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/02 19:31:18 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/15 20:11:04 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    print_msg(void)
 {
-    write (1, "somthing wrong in the map\n", 26);
+    write (1, "somthing wrong in the map!!\n", 28);
 }
 
 int how_many_char_in_the_str(char *str, char c)
