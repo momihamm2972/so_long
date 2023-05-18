@@ -12,25 +12,25 @@
 
 #include "so_long.h"
 
-char    *ft_strstr(char *big, char *little)
+char	*ft_strstr(char *big, char *little)
 {
-    int indx_big;
-    int indx_lit;
+	int	indx_big;
+	int	indx_lit;
 
-    if (*little == '\0')
-        return ((char *)big);
-    indx_big = 0;
-    indx_lit = 0;
-    while (big[indx_big])
-    {
-        while (little[indx_lit] && big[indx_big + indx_lit] == little[indx_lit])
-            indx_lit++;
-        if (little[indx_lit] == '\0')
-            return ((char *) &big[indx_big]);
-        indx_big++;
-        indx_lit = 0;
-    }
-    return (NULL);
+	if (*little == '\0')
+		return ((char *)big);
+	indx_big = 0;
+	indx_lit = 0;
+	while (big[indx_big])
+	{
+		while (little[indx_lit] && big[indx_big + indx_lit] == little[indx_lit])
+			indx_lit++;
+		if (little[indx_lit] == '\0')
+			return ((char *) &big[indx_big]);
+		indx_big++;
+		indx_lit = 0;
+	}
+	return (NULL);
 }
 
 void	free_all(char **s, int ptrs)

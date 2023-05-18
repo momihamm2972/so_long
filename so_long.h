@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 13:56:23 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/15 20:19:20 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/19 00:33:50 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct maps
     char *map;
     char *cp_map;
     char **cp_maphya;
+    char **floodfill_map;
     char **maphya;
     unsigned int  newlines;
     unsigned int  lines;
@@ -74,7 +75,7 @@ char	**ft_split(char const *s, char c);
 int how_many_char_in_the_str(char *str, char c);
 int check_borders(char *s, char c);
 int is_thef_and_thel_is_true(char *str, char c);
-int check_IF(char *str, char c);
+int check_if(char *str, char c);
 void    print_msg(void);
 char    *ft_of_reding_the_map(int fd);
 void    check_is_count_of_lines_is_gr_than_new_lines(char **str);
@@ -82,8 +83,8 @@ int strlines(char **str);
 void    check_missing_a_newline(int value_a, int value_b);
 void    check_the_walls(char **str);
 int counts (char *str, char c);
-int counts_0 (char **str, char c);
-void    check_P_E_C(char **str);
+int counts_zero (char **str, char c);
+void    check_p_e_c(char **str);
 int close_red_button();
 int ft_move(int key_hook, t_struct_of_maps *structt);
 void plyer(char **map, int parm, t_struct_of_maps *structt);
@@ -98,6 +99,12 @@ void    check_if_the_map_has_wrong_char(char **map);
 void    ft_draw_exit(t_struct_of_maps *maps);
 void    ft_putchar (char c);
 void	ft_putnbr(int nb);
+int	check_is_thepath_is_v(char **arr);
+int	flodfill(int i, int j, char **arr);
+int num_of_lines(char **arr);
+int clm_of_p(char **map);
+int row_of_p(char **map);
+int check_the_path(char **arr);
 // void    ft_colorbynew(char old_color, char new_color);
 // void    flood_fill(char **str, int afassil, int arratib, char new_char, char old_char);
 
