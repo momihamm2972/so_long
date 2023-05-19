@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 13:56:23 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/19 00:33:50 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/19 23:23:34 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct maps
     unsigned int  lines;
     unsigned int  first_line;
     unsigned int  rest_of_lines;
-    t_struct_of_excu *ptr_of_call;
+    t_struct_of_excu *p_o_c;
 }   t_struct_of_maps;
 /*--------------------------------------------------------------------------------------------------------------------------*/
 
@@ -105,6 +105,9 @@ int num_of_lines(char **arr);
 int clm_of_p(char **map);
 int row_of_p(char **map);
 int check_the_path(char **arr);
+void    check_the_of_file(char *str);
+int check_the_dot(char *str);
+char    **open_and_read_the_file(t_struct_of_maps *i_think_it_is, char *str);
 // void    ft_colorbynew(char old_color, char new_color);
 // void    flood_fill(char **str, int afassil, int arratib, char new_char, char old_char);
 
