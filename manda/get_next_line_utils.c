@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 20:28:34 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/14 22:54:37 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/20 15:31:52 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ char	*ft_strdup(char *s1)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*str1;
-	char	*str2;
-	unsigned int 	indx_of_conca;
-	char	*buff;
-	unsigned int 	indx;
+	char			*str1;
+	char			*str2;
+	char			*buff;
+	unsigned int	indx_of_conca;
+	unsigned int	indx;
 
 	if (!s1)
 		s1 = ft_strdup("");
@@ -74,7 +74,7 @@ unsigned int	ft_strlen(const char *s)
 
 char	*ft_substr(char const *s, unsigned int start, unsigned int len)
 {
-	char	*alloc_adds;
+	char				*alloc_adds;
 	unsigned int		str_len;
 	unsigned int		indx;
 	unsigned int		end;

@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:54:16 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/19 23:24:02 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/20 19:25:45 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,23 @@ int	close_red_button(void)
 	exit (0);
 }
 
-void	swap(int row, int indx, char **map, t_struct_of_maps *structt)
+void	swap(int row, int indx, char **map, t_struct_of_maps *stc)
 {
-	if (map[row - 1][indx] == '0')
+	if (map[row - 1][indx] == '0' || map[row - 1][indx] == 'C')
 	{
+		if (map[row - 1][indx] == 'C')
+		{
+			stc->pc->coll_of_exit++;
+		}
 		map[row - 1][indx] = 'P';
 		map[row][indx] = '0';
-		structt->p_o_c->moves++;
+		stc->pc->moves++;
 		write (1, "MOVE NUMBER =>", 14);
-		ft_putnbr (structt->p_o_c->moves);
+		ft_putnbr (stc->pc->moves);
 		write (1, "\n", 1);
 	}
-	if (map[row -1][indx] == 'C')
-	{
-		map[row - 1][indx] = 'P';
-		map[row][indx] = '0';
-		structt->p_o_c->coll_of_exit++;
-		structt->p_o_c->moves++;
-		write (1, "MOVE NUMBER =>", 14);
-		ft_putnbr (structt->p_o_c->moves);
-		write (1, "\n", 1);
-	}
-	if (structt->p_o_c->count_of_coll == structt->p_o_c->coll_of_exit && map[row - 1][indx] == 'E')
+	if (stc->pc->count_of_coll == stc->pc->coll_of_exit
+		&& map[row - 1][indx] == 'E')
 	{
 		map[row - 1][indx] = 'P';
 		map[row][indx] = '0';
@@ -47,22 +42,23 @@ void	swap(int row, int indx, char **map, t_struct_of_maps *structt)
 	}
 }
 
-void	swap_dwn(int row, int indx, char **map, t_struct_of_maps *structt)
+void	swad(int row, int indx, char **map, t_struct_of_maps *structt)
 {
 	if (map[row + 1][indx] == '0' || map[row + 1][indx] == 'C')
 	{
 		if (map[row + 1][indx] == 'C')
 		{
-			structt->p_o_c->coll_of_exit++;
+			structt->pc->coll_of_exit++;
 		}
 		map[row + 1][indx] = 'P';
 		map[row][indx] = '0';
-		structt->p_o_c->moves++;
+		structt->pc->moves++;
 		write (1, "MOVE NUMBER =>", 14);
-		ft_putnbr (structt->p_o_c->moves);
+		ft_putnbr (structt->pc->moves);
 		write (1, "\n", 1);
 	}
-	if (structt->p_o_c->count_of_coll == structt->p_o_c->coll_of_exit && map[row + 1][indx] == 'E')
+	if (structt->pc->count_of_coll == structt->pc->coll_of_exit
+		&& map[row + 1][indx] == 'E')
 	{
 		map[row + 1][indx] = 'P';
 		map[row][indx] = '0';
@@ -71,26 +67,27 @@ void	swap_dwn(int row, int indx, char **map, t_struct_of_maps *structt)
 	}
 }
 
-void	swap_rh(int row, int indx, char **map, t_struct_of_maps *structt)
+void	swar(int row, int indx, char **map, t_struct_of_maps *stc)
 {
 	if (map[row][indx + 1] == '0' || map[row][indx + 1] == 'C')
 	{
 		if (map[row][indx + 1] == 'C')
 		{
-			structt->p_o_c->coll_of_exit++;
-			structt->p_o_c->moves++;
+			stc->pc->coll_of_exit++;
+			stc->pc->moves++;
 			write (1, "MOVE NUMBER =>", 14);
-			ft_putnbr (structt->p_o_c->moves);
+			ft_putnbr (stc->pc->moves);
 			write (1, "\n", 1);
 		}
 		map[row][indx + 1] = 'P';
 		map[row][indx] = '0';
-		structt->p_o_c->moves++;
+		stc->pc->moves++;
 		write (1, "MOVE NUMBER =>", 14);
-		ft_putnbr (structt->p_o_c->moves);
+		ft_putnbr (stc->pc->moves);
 		write (1, "\n", 1);
 	}
-	if (structt->p_o_c->count_of_coll == structt->p_o_c->coll_of_exit && map[row][indx + 1] == 'E')
+	if (stc->pc->count_of_coll == stc->pc->coll_of_exit
+		&& map[row][indx + 1] == 'E')
 	{
 		map[row][indx + 1] = 'P';
 		map[row][indx] = '0';
@@ -99,22 +96,23 @@ void	swap_rh(int row, int indx, char **map, t_struct_of_maps *structt)
 	}
 }
 
-void	swap_lf(int row, int indx, char **map, t_struct_of_maps *structt)
+void	swal(int row, int indx, char **map, t_struct_of_maps *stc)
 {
 	if (map[row][indx - 1] == '0' || map[row][indx - 1] == 'C')
 	{
 		if (map[row][indx - 1] == 'C')
 		{
-			structt->p_o_c->coll_of_exit++;
+			stc->pc->coll_of_exit++;
 		}
 		map[row][indx - 1] = 'P';
 		map[row][indx] = '0';
-		structt->p_o_c->moves++;
+		stc->pc->moves++;
 		write (1, "MOVE NUMBER =>", 14);
-		ft_putnbr (structt->p_o_c->moves);
+		ft_putnbr (stc->pc->moves);
 		write (1, "\n", 1);
 	}
-	if (structt->p_o_c->count_of_coll == structt->p_o_c->coll_of_exit && map[row][indx - 1] == 'E')
+	if (stc->pc->count_of_coll == stc->pc->coll_of_exit
+		&& map[row][indx - 1] == 'E')
 	{
 		map[row][indx - 1] = 'P';
 		map[row][indx] = '0';

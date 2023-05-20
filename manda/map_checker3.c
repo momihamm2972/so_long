@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 21:09:50 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/19 00:22:08 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/20 19:08:22 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,30 @@ int	check_the_path(char **arr)
 			clm++;
 		}
 		row++;
+	}
+	return (0);
+}
+
+void	msg_xpmfiles(void)
+{
+	write (1, "something wrong in xpm files!!\n", 32);
+	exit(0);
+}
+
+int	check_the_dot(char *str)
+{
+	int	indx;
+	int	ndot;
+
+	indx = 0;
+	ndot = 0;
+	while (str[indx])
+	{
+		if (str[indx] == '.')
+			ndot++;
+		if (ndot > 1)
+			return (1);
+		indx++;
 	}
 	return (0);
 }
