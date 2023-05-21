@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 13:56:23 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/21 17:33:30 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/22 00:22:01 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,5 @@ void			check_the_of_file(char *str);
 void			intai_var(t_struct_of_maps *my_struct);
 void			msg_xpmfiles(void);
 void			start_mlx(t_struct_of_maps *is_a_stc);
-void			if_we_had_a_problem(t_struct_of_maps	*stc_pro);
 
 #endif
