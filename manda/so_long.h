@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 13:56:23 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/20 19:33:25 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/20 22:01:29 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # endif
 
 # include <mlx.h>
-# include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
