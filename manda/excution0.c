@@ -6,7 +6,7 @@
 /*   By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:54:16 by momihamm          #+#    #+#             */
-/*   Updated: 2023/05/21 01:35:52 by momihamm         ###   ########.fr       */
+/*   Updated: 2023/05/21 22:52:43 by momihamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	swap(int row, int indx, char **map, t_struct_of_maps *stc)
 	if (map[row - 1][indx] == '0' || map[row - 1][indx] == 'C')
 	{
 		if (map[row - 1][indx] == 'C')
-		{
 			stc->pc->coll_of_exit++;
-		}
 		map[row - 1][indx] = 'P';
 		map[row][indx] = '0';
 		stc->pc->moves++;
@@ -47,9 +45,7 @@ void	swad(int row, int indx, char **map, t_struct_of_maps *structt)
 	if (map[row + 1][indx] == '0' || map[row + 1][indx] == 'C')
 	{
 		if (map[row + 1][indx] == 'C')
-		{
 			structt->pc->coll_of_exit++;
-		}
 		map[row + 1][indx] = 'P';
 		map[row][indx] = '0';
 		structt->pc->moves++;
@@ -72,13 +68,7 @@ void	swar(int row, int indx, char **map, t_struct_of_maps *stc)
 	if (map[row][indx + 1] == '0' || map[row][indx + 1] == 'C')
 	{
 		if (map[row][indx + 1] == 'C')
-		{
 			stc->pc->coll_of_exit++;
-			stc->pc->moves++;
-			write (1, "MOVE NUMBER =>", 14);
-			ft_putnbr (stc->pc->moves);
-			write (1, "\n", 1);
-		}
 		map[row][indx + 1] = 'P';
 		map[row][indx] = '0';
 		stc->pc->moves++;
@@ -101,9 +91,7 @@ void	swal(int row, int indx, char **map, t_struct_of_maps *stc)
 	if (map[row][indx - 1] == '0' || map[row][indx - 1] == 'C')
 	{
 		if (map[row][indx - 1] == 'C')
-		{
 			stc->pc->coll_of_exit++;
-		}
 		map[row][indx - 1] = 'P';
 		map[row][indx] = '0';
 		stc->pc->moves++;

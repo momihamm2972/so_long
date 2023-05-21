@@ -6,13 +6,13 @@
 #    By: momihamm <momihamm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/29 09:54:22 by momihamm          #+#    #+#              #
-#    Updated: 2023/05/21 01:44:10 by momihamm         ###   ########.fr        #
+#    Updated: 2023/05/22 00:19:10 by momihamm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 CC = cc
-FLAGS = -Wall -Werror -Wextra 
+FLAGS = -Wall -Werror -Wextra
 FILES = so_long.c\
 		utils.c\
 		utils1.c\
@@ -34,7 +34,6 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	$(CC) $(FLAGS) $(FILES) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-
 
 clean :
 		@rm -rf $(OBJ)
